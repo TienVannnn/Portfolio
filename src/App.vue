@@ -3,6 +3,7 @@
     <Navbar />
     <HeroSection />
     <Skills />
+    <About />
   </div>
 </template>
 <script setup>
@@ -12,6 +13,7 @@ const HeroSection = defineAsyncComponent(
   () => import('@/components/HeroSection.vue'),
 )
 const Skills = defineAsyncComponent(() => import('@/components/Skills.vue'))
+const About = defineAsyncComponent(() => import('@/components/AboutMe.vue'))
 </script>
 
 <style scoped></style>
