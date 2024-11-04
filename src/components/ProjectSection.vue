@@ -12,20 +12,15 @@
           <div
             class="relative group overflow-hidden rounded-xl shadow-lg transition-transform duration-300 transform hover:scale-105"
           >
-            <!-- Ảnh Dự án -->
             <div
               class="h-64 bg-cover bg-center"
               :style="{ backgroundImage: 'url(' + project.image + ')' }"
             ></div>
 
-            <!-- Overlay Thông tin - Ẩn mặc định và hiển thị khi hover -->
             <div
               class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-0 opacity-0 transition-all duration-500 group-hover:bg-opacity-50 group-hover:opacity-100"
             >
               <div class="text-center text-white p-4">
-                <h3 class="text-lg font-semibold uppercase">
-                  {{ project.title }}
-                </h3>
                 <p class="text-gray-300 mt-2">{{ project.description }}</p>
                 <div class="flex flex-wrap justify-center gap-2 mt-4">
                   <span
@@ -86,6 +81,13 @@
               </div>
             </div>
           </div>
+          <div
+            class="text-white text-center rounded-b-xl mt-3 bg-[#111a3e] shadow-lg border border-[#1f1641] py-6 px-4"
+          >
+            <h3 class="text-lg font-semibold uppercase lg:text-xl">
+              {{ project.title }}
+            </h3>
+          </div>
         </li>
       </ul>
     </div>
@@ -100,7 +102,7 @@ const Projects = ref([
     image: 'src/assets/images/projects/weatherapp.png',
     title: 'Weather web app',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic tenetur quasi ipsam labore sapiente, accusamus necessitatibus laboriosam non voluptas inventore deserunt dolore modi ex, praesentium at provident nihil magni ratione!',
+      'Description: The website allows users to search for the city they want to see the weather and save that city for later viewing',
     technologies: ['vue.js 3', 'vuex'],
     gitURL: 'https://github.com/TienVannnn/Weather-App-Vuejs',
     webURL: 'weather-app-alpha-nine-23.vercel.app',
@@ -109,8 +111,7 @@ const Projects = ref([
     id: 2,
     image: 'src/assets/images/projects/flipcard.png',
     title: 'Pokemon-FlipCard',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic tenetur quasi ipsam labore sapiente, accusamus necessitatibus laboriosam non voluptas inventore deserunt dolore modi ex, praesentium at provident nihil magni ratione!',
+    description: 'website allows players to choose game modes',
     technologies: ['vue.js 3', 'vuex'],
     gitURL: 'https://github.com/TienVannnn/FlipCart-PokemonMemories',
     webURL: 'https://thunderous-heliotrope-f452ad.netlify.app/',
