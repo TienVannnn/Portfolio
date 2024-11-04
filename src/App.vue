@@ -1,15 +1,29 @@
 <template>
   <div class="bg-[#111827] min-h-screen">
-    <Navbar />
-    <HeroSection />
-    <Skills />
-    <Projects />
-    <About />
-    <Contact />
+    <Suspense>
+      <template #default>
+        <div>
+          <Navbar />
+          <HeroSection />
+          <Skills />
+          <Projects />
+          <About />
+          <Contact />
+          <Footer />
+          <BackToTop />
+        </div>
+      </template>
+      <template #fallback>
+        <div class="flex justify-center items-center min-h-screen">
+          <LoadingSpinner />
+        </div>
+      </template>
+    </Suspense>
   </div>
 </template>
 <script setup>
 import { defineAsyncComponent } from 'vue'
+import LoadingSpinner from './components/LoadingSpinner.vue'
 const Navbar = defineAsyncComponent(() => import('@/components/NavBar.vue'))
 const HeroSection = defineAsyncComponent(
   () => import('@/components/HeroSection.vue'),
@@ -21,6 +35,10 @@ const Contact = defineAsyncComponent(
 )
 const Projects = defineAsyncComponent(
   () => import('@/components/ProjectSection.vue'),
+)
+const Footer = defineAsyncComponent(() => import('@/components/Footer.vue'))
+const BackToTop = defineAsyncComponent(
+  () => import('@/components/BackToTop.vue'),
 )
 </script>
 
